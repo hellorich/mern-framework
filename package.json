@@ -6,8 +6,8 @@
   "scripts": {
     "compile": "webpack",
     "watch": "webpack --watch",
-    "start:dev": "NODE_ENV=development ./node_modules/.bin/nodemon server/server.js",
     "start": "NODE_ENV=production ./node_modules/.bin/nodemon server/server.js",
+    "start:dev": "NODE_ENV=development ./node_modules/.bin/nodemon server/server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
