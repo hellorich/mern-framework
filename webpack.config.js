@@ -1,3 +1,4 @@
+const webpack = require('webpack');
 const path = require('path');
 
 const config = {
@@ -5,13 +6,23 @@ const config = {
 
   devtool: 'eval-source-map',
 
-  entry: './app.jsx',
+  entry: {
+    app: './app.jsx',
+    vendor: ['react', 'react-dom']
+  },
 
   output: {
     path: path.resolve(__dirname, 'dist'),
     publicPath: '/',
-    filename: 'app.js',
+    filename: 'js/[name].js',
   },
+
+  plugins: [
+    new webpack.optimize.CommonsChunkPlugin({
+      name: 'vendor',
+      filename: 'vendor.bundle.js',
+    }),
+  ],
 
   module: {
     rules: [
@@ -26,6 +37,7 @@ const config = {
       },
     ],
   },
+
 };
 
 module.exports = config;
