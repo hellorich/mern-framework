@@ -4,7 +4,7 @@ const HypothesisController = require('../controllers/hypothesis');
 const router = Router();
 
 // Get all Hypothesis
-router.route('/hypothesis').get(HypothesisController.getHypothesis);
+router.route('/hypotheses').get(HypothesisController.getHypotheses);
 
 // Add new Hypothesis
 router.route('/hypothesis').post(HypothesisController.addHypothesis);

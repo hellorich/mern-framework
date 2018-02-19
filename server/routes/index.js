@@ -1,5 +1,5 @@
-const posts = require('./hypothesis');
+const hypotheses = require('./hypothesis');
 
 module.exports = {
-  posts,
+  hypotheses,
 };
