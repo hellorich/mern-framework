@@ -1,7 +1,6 @@
-const webpack = require('webpack');
 const path = require('path');
 
-const clientConfig = {
+const config = {
   context: path.resolve(__dirname, 'client'),
 
   devtool: 'eval-source-map',
@@ -29,4 +28,4 @@ const clientConfig = {
   },
 };
 
-module.exports = [clientConfig];
+module.exports = config;

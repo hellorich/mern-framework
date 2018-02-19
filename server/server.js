@@ -8,7 +8,7 @@ const app = express();
 // Set environment flag
 const isDev = config.nodeEnv === 'development';
 
-app.use(express.static('static'));
+app.use(express.static('dist'));
 
 app.listen(config.port, (error)=> {
   if (!error) {
