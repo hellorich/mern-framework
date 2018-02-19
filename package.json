@@ -1,0 +1,16 @@
+{
+  "name": "hypothesis-bank",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start:dev": "NODE_ENV=development ./node_modules/.bin/nodemon server/index.js",
+    "start": "NODE_ENV=production ./node_modules/.bin/nodemon server/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Brilliant Noise",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.16.2"
+  }
+}
