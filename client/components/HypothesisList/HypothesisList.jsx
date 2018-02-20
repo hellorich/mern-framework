@@ -1,6 +1,6 @@
 import React from 'react';
-
-import Hypothesis from './Hypothesis.jsx';
+import './HypothesisList.css';
+import Hypothesis from '../Hypothesis/Hypothesis.jsx';
 
 export default class HypothesisList extends React.Component {
   render() {

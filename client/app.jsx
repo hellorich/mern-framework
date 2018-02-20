@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDom from 'react-dom';
 
-import HypothesisList from './components/HypothesisList.jsx';
+import HypothesisList from './components/HypothesisList/HypothesisList.jsx';
 
 const contentNode = document.getElementById('app');
-ReactDom.render(<IssueList />, contentNode);
+ReactDom.render(<HypothesisList />, contentNode);

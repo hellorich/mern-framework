@@ -1,5 +1,8 @@
-const webpack = require('webpack');
+
 const path = require('path');
+const webpack = require('webpack');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const ExtractTextPlugin =require('extract-text-webpack-plugin');
 
 const config = {
   context: path.resolve(__dirname, 'client'),
@@ -17,13 +20,6 @@ const config = {
     filename: 'js/[name].js',
   },
 
-  plugins: [
-    new webpack.optimize.CommonsChunkPlugin({
-      name: 'vendor',
-      filename: 'vendor.bundle.js',
-    }),
-  ],
-
   module: {
     rules: [
       {
@@ -35,9 +31,42 @@ const config = {
           },
         },
       },
+      {
+        test: /\.css$/,
+        use: ExtractTextPlugin.extract({
+          fallback: 'style-loader',
+          use: [
+            {
+              loader: 'css-loader',
+              options: {
+                sourceMap: true
+              }
+            },
+            {
+              loader: 'postcss-loader',
+              options: {
+                plugins: () => [
+                  require('autoprefixer')(),
+                ]
+              }
+            }
+          ]
+        })
+      },
     ],
   },
 
+  plugins: [
+    new HtmlWebpackPlugin({
+      inject: 'body',
+      template: 'index.template',
+    }),
+    new ExtractTextPlugin('css/app.css'),
+    new webpack.optimize.CommonsChunkPlugin({
+      name: 'vendor',
+      filename: 'js/[name].js',
+    }),
+  ],
 };
 
 module.exports = config;

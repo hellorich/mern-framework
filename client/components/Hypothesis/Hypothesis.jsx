@@ -1,4 +1,5 @@
 import React from 'react';
+import './Hypothesis.css';
 
 export default class Hypothesis extends React.Component {
   render() {
